@@ -1,5 +1,7 @@
 /***************************************************************************
-  * Copyright (C) 1998 - 2016, Daniel Stenberg, <daniel@haxx.se>, et al.
+ * Adapted from curl examples (To be expanded to a utility)
+ * https://curl.haxx.se/libcurl/c/example.html
+ * Copyright (C) 1998 - 2016, Daniel Stenberg, <daniel@haxx.se>, et al.
  *
  * This software is licensed as described in the file COPYING, which
  * you should have received as part of this distribution. The terms
@@ -13,10 +15,7 @@
  * KIND, either express or implied.
  *
  ***************************************************************************/ 
-/* <DESC>
- * CA cert in memory with OpenSSL to get a HTTPS page.
- * </DESC>
- */ 
+ 
  
 #include <openssl/ssl.h>
 #include <curl/curl.h>
@@ -39,7 +38,7 @@ static CURLcode sslctx_function(CURL * curl, void * sslctx, void * parm)
   X509_STORE * store;
   X509 * cert=NULL;
   BIO * bio;
-  char * mypem = /* www.cacert.org */ 
+  char * mypem = /* add certificate here */ 
   "-----BEGIN CERTIFICATE-----\n"\
 	"MIIDKDCCAhACCQDTjLfvVb5LwDANBgkqhkiG9w0BAQsFADBWMQswCQYDVQQGEwJh\n"\
 	"dTELMAkGA1UECAwCc2ExDDAKBgNVBAcMA2FkZTELMAkGA1UECgwCbXkxCzAJBgNV\n"\
