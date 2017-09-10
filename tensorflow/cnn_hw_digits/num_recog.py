@@ -31,12 +31,9 @@ acc = []
 ce = []
 x = []
 
-for i in range(100):
-	#print str(i)
+for i in range(1000):
 	# load batch of images and correct answers
 	batch_X, batch_Y = mnist.train.next_batch(100)
-	#print str(len(batch_X)) + " " + str(len(batch_X[0])) + " " + str(len(batch_Y)) + " " + str(len(batch_Y[0]))
-	#print size(batch_Y)
 	train_data={X: batch_X, Y_:batch_Y}
 
 	# train 
