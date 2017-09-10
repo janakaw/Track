@@ -40,12 +40,12 @@ for i in range(1000):
 	sess.run(train_step, train_data)
 
 	a, c = sess.run([accuracy, cross_entropy], train_data)
+	
+	test_data = {X:mnist.test.images, Y_:mnist.test.labels}
+	a,c = sess.run([accuracy, cross_entropy], test_data)
 	x.append(i)
 	acc.append(a)
 	ce.append(c)
-
-	test_data = {X:mnist.test.images, Y_:mnist.test.labels}
-	a,c = sess.run([accuracy, cross_entropy], test_data)
 
 plt.plot(acc)
 plt.ylabel('accuracy')
